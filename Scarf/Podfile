@@ -8,6 +8,6 @@ pod 'ReactiveCocoa', '~> 2.1.8'
 end
 
 target "ScarfTests" do
-
+pod 'Kiwi/XCTest'
 end
 
