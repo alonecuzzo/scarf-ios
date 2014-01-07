@@ -20,6 +20,10 @@ describe(@"In my first kiwi test", ^{
         it(@"should be 'hello, world'", ^{
             [[greeting should] equal:@"hello world"];
         });
+        
+        pending_(@"it is not nil", ^{
+            
+        });
     });
 });
 

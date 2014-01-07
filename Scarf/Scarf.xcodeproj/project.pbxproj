@@ -22,6 +22,8 @@
 		8E410EA5187A017400619DC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E410EA3187A017400619DC7 /* InfoPlist.strings */; };
 		8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E410EB5187A034100619DC7 /* CBSAppDelegate.m */; };
 		8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E410EB8187A034E00619DC7 /* CBSViewController.m */; };
+		8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */; };
+		8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA9021187BBBBC007B1BBE /* CBSLocation.m */; };
 		8EDE6EFE187A2D96000522F5 /* SampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE6EFD187A2D96000522F5 /* SampleSpec.m */; };
 		C639619AF2EC427DBFD641F6 /* libPods-Scarf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,9 @@
 		8E410EB7187A034E00619DC7 /* CBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSViewController.h; path = classes/controllers/CBSViewController.h; sourceTree = "<group>"; };
 		8E410EB8187A034E00619DC7 /* CBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSViewController.m; path = classes/controllers/CBSViewController.m; sourceTree = "<group>"; };
 		8E6267CA187A1C0E00ABC1A4 /* libPods-ScarfTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ScarfTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-ScarfTests-Kiwi.a"; sourceTree = "<group>"; };
+		8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocationSpec.m; path = specs/model/CBSLocationSpec.m; sourceTree = "<group>"; };
+		8EAA9020187BBBBC007B1BBE /* CBSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSLocation.h; path = classes/model/CBSLocation.h; sourceTree = "<group>"; };
+		8EAA9021187BBBBC007B1BBE /* CBSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocation.m; path = classes/model/CBSLocation.m; sourceTree = "<group>"; };
 		8EDE6EFD187A2D96000522F5 /* SampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleSpec.m; path = specs/SampleSpec.m; sourceTree = "<group>"; };
 		F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scarf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -196,14 +201,33 @@
 			children = (
 				8E410EB2187A022600619DC7 /* controllers */,
 				8E410EB0187A01F900619DC7 /* delegate */,
+				8EAA901C187BBA11007B1BBE /* model */,
 				8E410EB1187A021A00619DC7 /* views */,
 			);
 			name = classes;
 			sourceTree = "<group>";
 		};
+		8EAA901C187BBA11007B1BBE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8EAA9020187BBBBC007B1BBE /* CBSLocation.h */,
+				8EAA9021187BBBBC007B1BBE /* CBSLocation.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		8EAA901D187BBA8B007B1BBE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		8EDE6EFC187A2D33000522F5 /* specs */ = {
 			isa = PBXGroup;
 			children = (
+				8EAA901D187BBA8B007B1BBE /* model */,
 				8EDE6EFD187A2D96000522F5 /* SampleSpec.m */,
 			);
 			name = specs;
@@ -376,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */,
+				8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */,
 				8E410E85187A017300619DC7 /* main.m in Sources */,
 				8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */,
 			);
@@ -385,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */,
 				8EDE6EFE187A2D96000522F5 /* SampleSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
