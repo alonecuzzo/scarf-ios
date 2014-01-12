@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		21EE53B211FA464991E495B2 /* libPods-ScarfTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD8AF46503848659A9148AD /* libPods-ScarfTests.a */; };
+		8E19423C1882F7F6008BBAF1 /* CBSAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19423B1882F7F6008BBAF1 /* CBSAPIClientSpec.m */; };
+		8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19423F1882F96D008BBAF1 /* CBSAPIClient.m */; };
+		8E19424218833353008BBAF1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E19424118833353008BBAF1 /* CoreLocation.framework */; };
 		8E410E79187A017300619DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E78187A017300619DC7 /* Foundation.framework */; };
 		8E410E7B187A017300619DC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E7A187A017300619DC7 /* CoreGraphics.framework */; };
 		8E410E7D187A017300619DC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E7C187A017300619DC7 /* UIKit.framework */; };
@@ -42,6 +45,10 @@
 		0F74FAD808E847E78FDC92C6 /* Pods-Scarf.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scarf.xcconfig"; path = "Pods/Pods-Scarf.xcconfig"; sourceTree = "<group>"; };
 		3CD8AF46503848659A9148AD /* libPods-ScarfTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ScarfTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C488E85F86463C8815E419 /* Pods-ScarfTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScarfTests.xcconfig"; path = "Pods/Pods-ScarfTests.xcconfig"; sourceTree = "<group>"; };
+		8E19423B1882F7F6008BBAF1 /* CBSAPIClientSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSAPIClientSpec.m; path = specs/api/CBSAPIClientSpec.m; sourceTree = "<group>"; };
+		8E19423E1882F96D008BBAF1 /* CBSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSAPIClient.h; path = classes/api/CBSAPIClient.h; sourceTree = "<group>"; };
+		8E19423F1882F96D008BBAF1 /* CBSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSAPIClient.m; path = classes/api/CBSAPIClient.m; sourceTree = "<group>"; };
+		8E19424118833353008BBAF1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8E410E75187A017300619DC7 /* Scarf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scarf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E410E78187A017300619DC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E410E7A187A017300619DC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -85,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E19424218833353008BBAF1 /* CoreLocation.framework in Frameworks */,
 				8E410E9B187A017400619DC7 /* XCTest.framework in Frameworks */,
 				8E410E9D187A017400619DC7 /* UIKit.framework in Frameworks */,
 				8E410E9C187A017400619DC7 /* Foundation.framework in Frameworks */,
@@ -95,6 +103,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E19423A1882F7BD008BBAF1 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				8E19423B1882F7F6008BBAF1 /* CBSAPIClientSpec.m */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
+		8E19423D1882F931008BBAF1 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				8E19423E1882F96D008BBAF1 /* CBSAPIClient.h */,
+				8E19423F1882F96D008BBAF1 /* CBSAPIClient.m */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
 		8E410E6C187A017300619DC7 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +144,7 @@
 		8E410E77187A017300619DC7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E19424118833353008BBAF1 /* CoreLocation.framework */,
 				8E6267CA187A1C0E00ABC1A4 /* libPods-ScarfTests-Kiwi.a */,
 				8E410E78187A017300619DC7 /* Foundation.framework */,
 				8E410E7A187A017300619DC7 /* CoreGraphics.framework */,
@@ -199,6 +225,7 @@
 		8E410EB3187A032600619DC7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E19423D1882F931008BBAF1 /* api */,
 				8E410EB2187A022600619DC7 /* controllers */,
 				8E410EB0187A01F900619DC7 /* delegate */,
 				8EAA901C187BBA11007B1BBE /* model */,
@@ -227,6 +254,7 @@
 		8EDE6EFC187A2D33000522F5 /* specs */ = {
 			isa = PBXGroup;
 			children = (
+				8E19423A1882F7BD008BBAF1 /* api */,
 				8EAA901D187BBA8B007B1BBE /* model */,
 				8EDE6EFD187A2D96000522F5 /* SampleSpec.m */,
 			);
@@ -402,6 +430,7 @@
 				8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */,
 				8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */,
 				8E410E85187A017300619DC7 /* main.m in Sources */,
+				8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */,
 				8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +441,7 @@
 			files = (
 				8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */,
 				8EDE6EFE187A2D96000522F5 /* SampleSpec.m in Sources */,
+				8E19423C1882F7F6008BBAF1 /* CBSAPIClientSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
