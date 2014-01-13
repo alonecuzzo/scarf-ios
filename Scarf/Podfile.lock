@@ -22,6 +22,8 @@ PODS:
   - Kiwi/XCTest (2.2.3):
     - Kiwi/ARC
     - Kiwi/NonARC
+  - OCMock (2.2.2)
+  - OHHTTPStubs (3.0.4)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
@@ -32,11 +34,15 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0.3)
   - Kiwi/XCTest
+  - OCMock (~> 2.2.2)
+  - OHHTTPStubs (~> 3.0.4)
   - ReactiveCocoa (~> 2.1.8)
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+  OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
+  OHHTTPStubs: 711cd3376438340d0c2538f66d6e9c1b3e8c5b7d
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
 
 COCOAPODS: 0.26.2

@@ -7,6 +7,8 @@
 //
 
 #import "CBSViewController.h"
+#import "CBSAPIClient.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface CBSViewController ()
 
@@ -17,7 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:45.000 longitude:45.000];
+    [[CBSAPIClient sharedInstance] searchForWeatherAtLocation:location completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

@@ -13,6 +13,6 @@
 
 + (instancetype)sharedInstance;
 
-- (NSURLSessionDataTask *)searchForWeatherAtLocation:(CLLocation *)location completion:(void (^)(NSArray *results, NSError *error))completion;
+- (NSURLSessionDataTask *)searchForWeatherAtLocation:(CLLocation *)location completion:(void (^)(NSDictionary *results, NSError *error))completion;
 
 @end

@@ -11,6 +11,9 @@
 		8E19423C1882F7F6008BBAF1 /* CBSAPIClientSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19423B1882F7F6008BBAF1 /* CBSAPIClientSpec.m */; };
 		8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19423F1882F96D008BBAF1 /* CBSAPIClient.m */; };
 		8E19424218833353008BBAF1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E19424118833353008BBAF1 /* CoreLocation.framework */; };
+		8E19424518835033008BBAF1 /* CBSViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19424418835033008BBAF1 /* CBSViewModelSpec.m */; };
+		8E19424918835113008BBAF1 /* CBSViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19424818835113008BBAF1 /* CBSViewModel.m */; };
+		8E19424C18837298008BBAF1 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E19424B18837298008BBAF1 /* weather.json */; };
 		8E410E79187A017300619DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E78187A017300619DC7 /* Foundation.framework */; };
 		8E410E7B187A017300619DC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E7A187A017300619DC7 /* CoreGraphics.framework */; };
 		8E410E7D187A017300619DC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E7C187A017300619DC7 /* UIKit.framework */; };
@@ -27,7 +30,6 @@
 		8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E410EB8187A034E00619DC7 /* CBSViewController.m */; };
 		8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */; };
 		8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA9021187BBBBC007B1BBE /* CBSLocation.m */; };
-		8EDE6EFE187A2D96000522F5 /* SampleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE6EFD187A2D96000522F5 /* SampleSpec.m */; };
 		C639619AF2EC427DBFD641F6 /* libPods-Scarf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,10 @@
 		8E19423E1882F96D008BBAF1 /* CBSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSAPIClient.h; path = classes/api/CBSAPIClient.h; sourceTree = "<group>"; };
 		8E19423F1882F96D008BBAF1 /* CBSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSAPIClient.m; path = classes/api/CBSAPIClient.m; sourceTree = "<group>"; };
 		8E19424118833353008BBAF1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E19424418835033008BBAF1 /* CBSViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSViewModelSpec.m; path = specs/viewmodel/CBSViewModelSpec.m; sourceTree = "<group>"; };
+		8E19424718835113008BBAF1 /* CBSViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSViewModel.h; path = classes/viewmodel/CBSViewModel.h; sourceTree = "<group>"; };
+		8E19424818835113008BBAF1 /* CBSViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSViewModel.m; path = classes/viewmodel/CBSViewModel.m; sourceTree = "<group>"; };
+		8E19424B18837298008BBAF1 /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = weather.json; path = fixtures/weather.json; sourceTree = "<group>"; };
 		8E410E75187A017300619DC7 /* Scarf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scarf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E410E78187A017300619DC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E410E7A187A017300619DC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,7 +78,6 @@
 		8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocationSpec.m; path = specs/model/CBSLocationSpec.m; sourceTree = "<group>"; };
 		8EAA9020187BBBBC007B1BBE /* CBSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSLocation.h; path = classes/model/CBSLocation.h; sourceTree = "<group>"; };
 		8EAA9021187BBBBC007B1BBE /* CBSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocation.m; path = classes/model/CBSLocation.m; sourceTree = "<group>"; };
-		8EDE6EFD187A2D96000522F5 /* SampleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleSpec.m; path = specs/SampleSpec.m; sourceTree = "<group>"; };
 		F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scarf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +123,31 @@
 				8E19423F1882F96D008BBAF1 /* CBSAPIClient.m */,
 			);
 			name = api;
+			sourceTree = "<group>";
+		};
+		8E19424318834FD2008BBAF1 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				8E19424418835033008BBAF1 /* CBSViewModelSpec.m */,
+			);
+			name = viewmodel;
+			sourceTree = "<group>";
+		};
+		8E194246188350EF008BBAF1 /* view model */ = {
+			isa = PBXGroup;
+			children = (
+				8E19424718835113008BBAF1 /* CBSViewModel.h */,
+				8E19424818835113008BBAF1 /* CBSViewModel.m */,
+			);
+			name = "view model";
+			sourceTree = "<group>";
+		};
+		8E19424A1883726F008BBAF1 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				8E19424B18837298008BBAF1 /* weather.json */,
+			);
+			name = fixtures;
 			sourceTree = "<group>";
 		};
 		8E410E6C187A017300619DC7 = {
@@ -182,6 +212,7 @@
 		8E410EA0187A017400619DC7 /* ScarfTests */ = {
 			isa = PBXGroup;
 			children = (
+				8E19424A1883726F008BBAF1 /* fixtures */,
 				8EDE6EFC187A2D33000522F5 /* specs */,
 				8E410EA1187A017400619DC7 /* Supporting Files */,
 			);
@@ -230,6 +261,7 @@
 				8E410EB0187A01F900619DC7 /* delegate */,
 				8EAA901C187BBA11007B1BBE /* model */,
 				8E410EB1187A021A00619DC7 /* views */,
+				8E194246188350EF008BBAF1 /* view model */,
 			);
 			name = classes;
 			sourceTree = "<group>";
@@ -256,7 +288,7 @@
 			children = (
 				8E19423A1882F7BD008BBAF1 /* api */,
 				8EAA901D187BBA8B007B1BBE /* model */,
-				8EDE6EFD187A2D96000522F5 /* SampleSpec.m */,
+				8E19424318834FD2008BBAF1 /* viewmodel */,
 			);
 			name = specs;
 			sourceTree = "<group>";
@@ -353,6 +385,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E19424C18837298008BBAF1 /* weather.json in Resources */,
 				8E410EA5187A017400619DC7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +463,7 @@
 				8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */,
 				8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */,
 				8E410E85187A017300619DC7 /* main.m in Sources */,
+				8E19424918835113008BBAF1 /* CBSViewModel.m in Sources */,
 				8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */,
 				8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */,
 			);
@@ -439,8 +473,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E19424518835033008BBAF1 /* CBSViewModelSpec.m in Sources */,
 				8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */,
-				8EDE6EFE187A2D96000522F5 /* SampleSpec.m in Sources */,
 				8E19423C1882F7F6008BBAF1 /* CBSAPIClientSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
