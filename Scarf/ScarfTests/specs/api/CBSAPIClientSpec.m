@@ -5,6 +5,29 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubsResponse.h>
 
+#pragma mark - 
+#pragma helper functions
+
+@interface CBSAPIClientSpecHelperMethods : NSObject 
+
++ (void)setupStubRequestPassingTestWithStatusCode:(int)statusCode;
+
+@end
+
+@implementation CBSAPIClientSpecHelperMethods : NSObject 
+
++ (void)setupStubRequestPassingTestWithStatusCode:(int)statusCode
+{
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithFileAtPath:@"weather.json" statusCode:statusCode headers:nil] responseTime:1.0];
+    }];
+}
+
+@end
+
+
 SPEC_BEGIN(CBSAPIClientSpec)
 
 describe(@"A CBSAPIClient ", ^{
@@ -69,11 +92,7 @@ describe(@"A CBSAPIClient ", ^{
             it(@"should throw the proper error if a 404 is returned", ^{
                 __block NSError *myError = nil;
                 
-                [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-                    return YES;
-                } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-                    return [[OHHTTPStubsResponse responseWithFileAtPath:@"weather.json" statusCode:404 headers:nil] responseTime:1.0];
-                }];
+                [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:404];
                
                 CLLocation *location = [[CLLocation alloc] initWithLatitude:45.384 longitude:45.384];
                 [client searchForWeatherAtLocation:location completion:^(NSDictionary *results, NSError *error) {
@@ -86,7 +105,9 @@ describe(@"A CBSAPIClient ", ^{
             });
             
             pending_(@"should not throw any error if 200 response", ^{
+                __block NSError *myError = nil;
                 
+                [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:200];
             });
             
             pending_(@"should throw malformed json error if bad data passed", ^{
