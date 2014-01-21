@@ -20,9 +20,12 @@
 + (void)setupStubRequestPassingTestWithStatusCode:(int)statusCode
 {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
+        return [request.URL.host isEqualToString:@"localhost"];
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [[OHHTTPStubsResponse responseWithFileAtPath:@"weather.json" statusCode:statusCode headers:nil] responseTime:1.0];
+        NSData *data = [NSData dataWithContentsOfFile:OHPathForFileInBundle(@"weather.json", nil)];
+        NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        return [[OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"weather.json", nil) statusCode:statusCode headers:@{@"Content-Type":@"text/json"}] responseTime:1.0];
+        return [OHHTTPStubsResponse responseWithData:data statusCode:statusCode headers:@{@"Content-Type":@"text/json"}];
     }];
 }
 
@@ -39,7 +42,7 @@ SPEC_BEGIN(CBSAPIClientSpec)
 describe(@"A CBSAPIClient ", ^{
     
    __block CBSAPIClient *client;
-   
+    
     beforeEach(^{
         client = [CBSAPIClient sharedInstance];
     });
@@ -93,6 +96,10 @@ describe(@"A CBSAPIClient ", ^{
        });
         
         context(@"and data is returned", ^{
+            
+            afterEach(^{
+                [OHHTTPStubs removeAllStubs];
+            });
           
             it(@"should throw the proper error if a 404 is returned", ^{
                 __block NSError *myError = nil;
@@ -108,7 +115,7 @@ describe(@"A CBSAPIClient ", ^{
                 [[expectFutureValue(theValue(myError.code)) shouldEventuallyBeforeTimingOutAfter(2.0)] equal:theValue(404)];
             });
             
-            pending_(@"should not throw any error if 200 response", ^{
+            it(@"should not throw any error if 200 response", ^{
                 __block NSError *myError = nil;
                 
                 [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:200];
@@ -119,12 +126,22 @@ describe(@"A CBSAPIClient ", ^{
                     }
                 }];
                 
-                [[expectFutureValue(theValue(myError)) shouldEventuallyBeforeTimingOutAfter(2.0)] beNil];
+                [[expectFutureValue(myError) shouldEventuallyBeforeTimingOutAfter(2.0)] beNil];
                 
             });
             
-            pending_(@"should throw malformed json error if bad data passed", ^{
+            it(@"should throw malformed json error if bad data passed", ^{
+                __block NSError *myError = nil;
                 
+                [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:200];
+                
+                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:^(NSDictionary *results, NSError *error) {
+                    if (error) {
+                        myError = error;
+                    }
+                }];
+                
+                [[expectFutureValue(theValue(myError.code)) shouldEventuallyBeforeTimingOutAfter(2.0)] equal:theValue(CBSAPIClientErrorTypeMalformedJSON)];
             });
             
         });

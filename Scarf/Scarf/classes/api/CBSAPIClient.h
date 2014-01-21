@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 coffee.beans. All rights reserved.
 //
 
+typedef NS_ENUM(NSInteger, CBSAPIClientErrorType) {
+    CBSAPIClientErrorTypeMalformedJSON
+};
+
 #import "AFHTTPSessionManager.h"
 #import <CoreLocation/CoreLocation.h>
 

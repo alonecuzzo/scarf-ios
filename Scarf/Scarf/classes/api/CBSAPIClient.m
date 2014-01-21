@@ -34,8 +34,14 @@ NSString *const CBSAPIClientErrorDomain = @"CBSAPIClientErrorDomain";
                                         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
                                         if (response.statusCode == 200) {
                                             if (completion) {
+                                               NSError *error = nil;
+                                                
+                                                if (![responseObject isKindOfClass:[NSDictionary class]]) {
+                                                    error = [self errorWithCode:CBSAPIClientErrorTypeMalformedJSON userInfo:nil];
+                                                }
+                                                
                                                 dispatch_async(dispatch_get_main_queue(), ^{
-                                                    completion(responseObject, nil);
+                                                    completion(responseObject, error);
                                                 });
                                             }
                                         } else {
