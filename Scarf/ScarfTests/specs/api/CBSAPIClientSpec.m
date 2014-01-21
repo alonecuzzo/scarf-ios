@@ -11,6 +11,7 @@
 @interface CBSAPIClientSpecHelperMethods : NSObject 
 
 + (void)setupStubRequestPassingTestWithStatusCode:(int)statusCode;
++ (CLLocation *)aLocation;
 
 @end
 
@@ -23,6 +24,11 @@
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithFileAtPath:@"weather.json" statusCode:statusCode headers:nil] responseTime:1.0];
     }];
+}
+
++ (CLLocation *)aLocation
+{
+   return [[CLLocation alloc] initWithLatitude:45.384 longitude:45.384];
 }
 
 @end
@@ -59,8 +65,7 @@ describe(@"A CBSAPIClient ", ^{
         __block NSURLSessionDataTask *task;
         
         beforeEach(^{
-            CLLocation *location = [[CLLocation alloc] initWithLatitude:45.384 longitude:45.384];
-            task = [client searchForWeatherAtLocation:location completion:nil];
+            task = [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:nil];
         });
         
         afterEach(^{
@@ -94,8 +99,7 @@ describe(@"A CBSAPIClient ", ^{
                 
                 [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:404];
                
-                CLLocation *location = [[CLLocation alloc] initWithLatitude:45.384 longitude:45.384];
-                [client searchForWeatherAtLocation:location completion:^(NSDictionary *results, NSError *error) {
+                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:^(NSDictionary *results, NSError *error) {
                     if (error) {
                         myError = error;
                     }
@@ -108,6 +112,15 @@ describe(@"A CBSAPIClient ", ^{
                 __block NSError *myError = nil;
                 
                 [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:200];
+                
+                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:^(NSDictionary *results, NSError *error) {
+                    if (error) {
+                        myError = error;
+                    }
+                }];
+                
+                [[expectFutureValue(theValue(myError)) shouldEventuallyBeforeTimingOutAfter(2.0)] beNil];
+                
             });
             
             pending_(@"should throw malformed json error if bad data passed", ^{
