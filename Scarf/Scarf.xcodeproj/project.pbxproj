@@ -14,6 +14,8 @@
 		8E19424518835033008BBAF1 /* CBSViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19424418835033008BBAF1 /* CBSViewModelSpec.m */; };
 		8E19424918835113008BBAF1 /* CBSViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E19424818835113008BBAF1 /* CBSViewModel.m */; };
 		8E19424C18837298008BBAF1 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E19424B18837298008BBAF1 /* weather.json */; };
+		8E2249D4189462A100958624 /* CBSIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2249D3189462A100958624 /* CBSIntroViewController.m */; };
+		8E2249D9189464ED00958624 /* CBSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2249D8189464ED00958624 /* CBSColor.m */; };
 		8E410E79187A017300619DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E78187A017300619DC7 /* Foundation.framework */; };
 		8E410E7B187A017300619DC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E7A187A017300619DC7 /* CoreGraphics.framework */; };
 		8E410E7D187A017300619DC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E410E7C187A017300619DC7 /* UIKit.framework */; };
@@ -55,6 +57,10 @@
 		8E19424718835113008BBAF1 /* CBSViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSViewModel.h; path = classes/viewmodel/CBSViewModel.h; sourceTree = "<group>"; };
 		8E19424818835113008BBAF1 /* CBSViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSViewModel.m; path = classes/viewmodel/CBSViewModel.m; sourceTree = "<group>"; };
 		8E19424B18837298008BBAF1 /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = weather.json; path = fixtures/weather.json; sourceTree = "<group>"; };
+		8E2249D2189462A100958624 /* CBSIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSIntroViewController.h; path = classes/controllers/CBSIntroViewController.h; sourceTree = "<group>"; };
+		8E2249D3189462A100958624 /* CBSIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSIntroViewController.m; path = classes/controllers/CBSIntroViewController.m; sourceTree = "<group>"; };
+		8E2249D7189464ED00958624 /* CBSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSColor.h; path = classes/constants/colors/CBSColor.h; sourceTree = "<group>"; };
+		8E2249D8189464ED00958624 /* CBSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSColor.m; path = classes/constants/colors/CBSColor.m; sourceTree = "<group>"; };
 		8E410E75187A017300619DC7 /* Scarf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scarf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E410E78187A017300619DC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E410E7A187A017300619DC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -148,6 +154,23 @@
 				8E19424B18837298008BBAF1 /* weather.json */,
 			);
 			name = fixtures;
+			sourceTree = "<group>";
+		};
+		8E2249D51894649C00958624 /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				8E2249D6189464AD00958624 /* colors */,
+			);
+			name = constants;
+			sourceTree = "<group>";
+		};
+		8E2249D6189464AD00958624 /* colors */ = {
+			isa = PBXGroup;
+			children = (
+				8E2249D7189464ED00958624 /* CBSColor.h */,
+				8E2249D8189464ED00958624 /* CBSColor.m */,
+			);
+			name = colors;
 			sourceTree = "<group>";
 		};
 		8E410E6C187A017300619DC7 = {
@@ -247,6 +270,8 @@
 		8E410EB2187A022600619DC7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8E2249D2189462A100958624 /* CBSIntroViewController.h */,
+				8E2249D3189462A100958624 /* CBSIntroViewController.m */,
 				8E410EB7187A034E00619DC7 /* CBSViewController.h */,
 				8E410EB8187A034E00619DC7 /* CBSViewController.m */,
 			);
@@ -258,6 +283,7 @@
 			children = (
 				8E19423D1882F931008BBAF1 /* api */,
 				8E410EB2187A022600619DC7 /* controllers */,
+				8E2249D51894649C00958624 /* constants */,
 				8E410EB0187A01F900619DC7 /* delegate */,
 				8EAA901C187BBA11007B1BBE /* model */,
 				8E410EB1187A021A00619DC7 /* views */,
@@ -462,7 +488,9 @@
 			files = (
 				8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */,
 				8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */,
+				8E2249D4189462A100958624 /* CBSIntroViewController.m in Sources */,
 				8E410E85187A017300619DC7 /* main.m in Sources */,
+				8E2249D9189464ED00958624 /* CBSColor.m in Sources */,
 				8E19424918835113008BBAF1 /* CBSViewModel.m in Sources */,
 				8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */,
 				8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */,

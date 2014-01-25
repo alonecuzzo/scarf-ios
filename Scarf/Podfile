@@ -3,13 +3,15 @@
 
 target "Scarf" do
 pod 'AFNetworking', '~> 2.0.3'
-pod 'OCMock', '~> 2.2.2'
 pod 'ReactiveCocoa', '~> 2.1.8'
-pod 'OHHTTPStubs', '~> 3.0.4'
 #pod 'AFNetworking-RACExtensions', '~> 0.1.2'
+pod 'VENSnowOverlayView', '~> 0.1.1'
+pod 'EAIntroView', '~> 2.2.0'
 end
 
 target "ScarfTests" do
 pod 'Kiwi/XCTest'
+pod 'OHHTTPStubs', '~> 3.0.4'
+pod 'OCMock', '~> 2.2.2'
 end
 
