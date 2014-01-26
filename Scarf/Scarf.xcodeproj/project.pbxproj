@@ -32,6 +32,8 @@
 		8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E410EB8187A034E00619DC7 /* CBSViewController.m */; };
 		8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */; };
 		8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA9021187BBBBC007B1BBE /* CBSLocation.m */; };
+		8EE408211894C0DD00BD7709 /* CBSRainOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */; };
+		8EE408251894C2AA00BD7709 /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE408241894C2AA00BD7709 /* drop.png */; };
 		C639619AF2EC427DBFD641F6 /* libPods-Scarf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,9 @@
 		8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocationSpec.m; path = specs/model/CBSLocationSpec.m; sourceTree = "<group>"; };
 		8EAA9020187BBBBC007B1BBE /* CBSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSLocation.h; path = classes/model/CBSLocation.h; sourceTree = "<group>"; };
 		8EAA9021187BBBBC007B1BBE /* CBSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocation.m; path = classes/model/CBSLocation.m; sourceTree = "<group>"; };
+		8EE4081F1894C0DD00BD7709 /* CBSRainOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSRainOverlayView.h; path = classes/support/weather/CBSRainOverlayView.h; sourceTree = "<group>"; };
+		8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSRainOverlayView.m; path = classes/support/weather/CBSRainOverlayView.m; sourceTree = "<group>"; };
+		8EE408241894C2AA00BD7709 /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
 		F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scarf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -213,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				8E410EB3187A032600619DC7 /* classes */,
+				8EE408221894C29100BD7709 /* resources */,
 				8E410E8A187A017300619DC7 /* Main_iPhone.storyboard */,
 				8E410E8D187A017300619DC7 /* Main_iPad.storyboard */,
 				8E410E93187A017300619DC7 /* Images.xcassets */,
@@ -286,6 +292,7 @@
 				8E2249D51894649C00958624 /* constants */,
 				8E410EB0187A01F900619DC7 /* delegate */,
 				8EAA901C187BBA11007B1BBE /* model */,
+				8EE4081C1894C08300BD7709 /* support */,
 				8E410EB1187A021A00619DC7 /* views */,
 				8E194246188350EF008BBAF1 /* view model */,
 			);
@@ -317,6 +324,47 @@
 				8E19424318834FD2008BBAF1 /* viewmodel */,
 			);
 			name = specs;
+			sourceTree = "<group>";
+		};
+		8EE4081C1894C08300BD7709 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				8EE4081E1894C0A100BD7709 /* weather */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
+		8EE4081D1894C09300BD7709 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				8EE4081F1894C0DD00BD7709 /* CBSRainOverlayView.h */,
+				8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		8EE4081E1894C0A100BD7709 /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				8EE4081D1894C09300BD7709 /* views */,
+			);
+			name = weather;
+			sourceTree = "<group>";
+		};
+		8EE408221894C29100BD7709 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				8EE408231894C29700BD7709 /* images */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		8EE408231894C29700BD7709 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8EE408241894C2AA00BD7709 /* drop.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E410E8F187A017300619DC7 /* Main_iPad.storyboard in Resources */,
+				8EE408251894C2AA00BD7709 /* drop.png in Resources */,
 				8E410E94187A017300619DC7 /* Images.xcassets in Resources */,
 				8E410E8C187A017300619DC7 /* Main_iPhone.storyboard in Resources */,
 				8E410E83187A017300619DC7 /* InfoPlist.strings in Resources */,
@@ -487,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */,
+				8EE408211894C0DD00BD7709 /* CBSRainOverlayView.m in Sources */,
 				8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */,
 				8E2249D4189462A100958624 /* CBSIntroViewController.m in Sources */,
 				8E410E85187A017300619DC7 /* main.m in Sources */,

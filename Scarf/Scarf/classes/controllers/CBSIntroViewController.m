@@ -7,6 +7,7 @@
 //
 
 #import "CBSIntroViewController.h"
+#import "CBSRainOverlayView.h"
 
 #import <EAIntroView/EAIntroPage.h>
 #import <EAIntroView/EAIntroView.h>
@@ -39,6 +40,9 @@
     EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:pages];
     introView.delegate = self;
     [self.view addSubview:introView];
+    
+    CBSRainOverlayView *rainOverlay = [[CBSRainOverlayView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:rainOverlay];
     
     _snowOverlayView = [[VENSnowOverlayView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_snowOverlayView];
