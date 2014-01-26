@@ -7,15 +7,13 @@
 //
 
 #import "CBSIntroViewController.h"
+#import "CBSSnowOverlayView.h"
 #import "CBSRainOverlayView.h"
 
 #import <EAIntroView/EAIntroPage.h>
 #import <EAIntroView/EAIntroView.h>
-#import <VENSnowOverlayView/VENSnowOverlayView.h>
 
 @interface CBSIntroViewController () <EAIntroDelegate>
-
-@property (strong,nonatomic) VENSnowOverlayView *snowOverlayView;
 
 @end
 
@@ -29,25 +27,25 @@
 
 - (void)setupIntroView
 {
-    int numPages = 6;
+    int numPages = 2;
     NSMutableArray *pages = [NSMutableArray array];
+    CBSRainOverlayView *rainOverlay = [[CBSRainOverlayView alloc] initWithFrame:self.view.bounds];
+    CBSSnowOverlayView *snowOverlay = [[CBSSnowOverlayView alloc] initWithFrame:self.view.bounds];
     
     for (int i = 0; i < numPages; i++) {
         EAIntroPage *page = [EAIntroPage page];
+        if (i % 2 == 0) {
+            page.customView = rainOverlay;
+        } else {
+            page.customView = snowOverlay;
+        }
+//        page.customView.alpha = 0;
         [pages addObject:page];
     }
     
     EAIntroView *introView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:pages];
     introView.delegate = self;
-    [self.view addSubview:introView];
-    
-    CBSRainOverlayView *rainOverlay = [[CBSRainOverlayView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:rainOverlay];
-    
-    _snowOverlayView = [[VENSnowOverlayView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:_snowOverlayView];
-    _snowOverlayView.alpha = 0;
-    [_snowOverlayView beginSnowAnimation];
+    [introView showInView:self.view animateDuration:0.3];
 }
 
 #pragma mark - 
@@ -59,15 +57,7 @@
 
 - (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSInteger)pageIndex
 {
-   if (pageIndex == 3) {
-       [UIView animateWithDuration:1 animations:^{
-           _snowOverlayView.alpha = 1;
-       }];
-    } else {
-       [UIView animateWithDuration:1 animations:^{
-           _snowOverlayView.alpha = 0;
-       }];
-    }
+    
 }
 
 - (void)intro:(EAIntroView *)introView pageStartScrolling:(EAIntroPage *)page withIndex:(NSInteger)pageIndex

@@ -34,6 +34,8 @@
 		8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA9021187BBBBC007B1BBE /* CBSLocation.m */; };
 		8EE408211894C0DD00BD7709 /* CBSRainOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */; };
 		8EE408251894C2AA00BD7709 /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE408241894C2AA00BD7709 /* drop.png */; };
+		8EE408271894D10C00BD7709 /* flake.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE408261894D10C00BD7709 /* flake.png */; };
+		8EE4082A1894D12E00BD7709 /* CBSSnowOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE408291894D12E00BD7709 /* CBSSnowOverlayView.m */; };
 		C639619AF2EC427DBFD641F6 /* libPods-Scarf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,9 @@
 		8EE4081F1894C0DD00BD7709 /* CBSRainOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSRainOverlayView.h; path = classes/support/weather/CBSRainOverlayView.h; sourceTree = "<group>"; };
 		8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSRainOverlayView.m; path = classes/support/weather/CBSRainOverlayView.m; sourceTree = "<group>"; };
 		8EE408241894C2AA00BD7709 /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
+		8EE408261894D10C00BD7709 /* flake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flake.png; path = resources/images/flake.png; sourceTree = "<group>"; };
+		8EE408281894D12E00BD7709 /* CBSSnowOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSSnowOverlayView.h; path = classes/support/weather/CBSSnowOverlayView.h; sourceTree = "<group>"; };
+		8EE408291894D12E00BD7709 /* CBSSnowOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSSnowOverlayView.m; path = classes/support/weather/CBSSnowOverlayView.m; sourceTree = "<group>"; };
 		F5A7CB0D3EAC4D5D8E73827A /* libPods-Scarf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scarf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -339,6 +344,8 @@
 			children = (
 				8EE4081F1894C0DD00BD7709 /* CBSRainOverlayView.h */,
 				8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */,
+				8EE408281894D12E00BD7709 /* CBSSnowOverlayView.h */,
+				8EE408291894D12E00BD7709 /* CBSSnowOverlayView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -362,6 +369,7 @@
 		8EE408231894C29700BD7709 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8EE408261894D10C00BD7709 /* flake.png */,
 				8EE408241894C2AA00BD7709 /* drop.png */,
 			);
 			name = images;
@@ -451,6 +459,7 @@
 				8E410E8F187A017300619DC7 /* Main_iPad.storyboard in Resources */,
 				8EE408251894C2AA00BD7709 /* drop.png in Resources */,
 				8E410E94187A017300619DC7 /* Images.xcassets in Resources */,
+				8EE408271894D10C00BD7709 /* flake.png in Resources */,
 				8E410E8C187A017300619DC7 /* Main_iPhone.storyboard in Resources */,
 				8E410E83187A017300619DC7 /* InfoPlist.strings in Resources */,
 			);
@@ -542,6 +551,7 @@
 				8E410E85187A017300619DC7 /* main.m in Sources */,
 				8E2249D9189464ED00958624 /* CBSColor.m in Sources */,
 				8E19424918835113008BBAF1 /* CBSViewModel.m in Sources */,
+				8EE4082A1894D12E00BD7709 /* CBSSnowOverlayView.m in Sources */,
 				8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */,
 				8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */,
 			);
