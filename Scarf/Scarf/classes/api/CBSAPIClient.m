@@ -7,6 +7,8 @@
 //
 
 #import "CBSAPIClient.h"
+#import "NSNumber+Validator.h"
+
 #import <AFURLConnectionOperation.h>
 
 @implementation CBSAPIClient
@@ -27,6 +29,12 @@ NSString *const CBSAPIClientErrorDomain = @"CBSAPIClientErrorDomain";
 
 - (NSURLSessionDataTask *)searchForWeatherAtLocation:(CLLocation *)location completion:(void (^)(NSDictionary *results, NSError *error))completion
 {
+    NSNumber *lat = [NSNumber numberWithFloat:location.coordinate.latitude];
+    NSNumber *lon = [NSNumber numberWithFloat:location.coordinate.longitude];
+    if (!([lat isValidLatitude] && [lon isValidLongitude])) {
+        return nil;
+    }
+    
     NSURLSessionDataTask *task = [self GET:@"weather/"
                                 parameters:@{@"lat": [NSNumber numberWithFloat:location.coordinate.latitude],
                                              @"lon": [NSNumber numberWithFloat:location.coordinate.longitude]}

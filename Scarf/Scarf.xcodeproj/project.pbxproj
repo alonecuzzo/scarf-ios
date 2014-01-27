@@ -30,6 +30,8 @@
 		8E410EA5187A017400619DC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E410EA3187A017400619DC7 /* InfoPlist.strings */; };
 		8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E410EB5187A034100619DC7 /* CBSAppDelegate.m */; };
 		8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E410EB8187A034E00619DC7 /* CBSViewController.m */; };
+		8E6FF8731896190400C593AF /* CBSIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6FF8721896190400C593AF /* CBSIntroView.m */; };
+		8E6FF87718961B8300C593AF /* NSNumber+Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6FF87618961B8300C593AF /* NSNumber+Validator.m */; };
 		8EAA901F187BBAAF007B1BBE /* CBSLocationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */; };
 		8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA9021187BBBBC007B1BBE /* CBSLocation.m */; };
 		8EE408211894C0DD00BD7709 /* CBSRainOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE408201894C0DD00BD7709 /* CBSRainOverlayView.m */; };
@@ -85,6 +87,10 @@
 		8E410EB7187A034E00619DC7 /* CBSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSViewController.h; path = classes/controllers/CBSViewController.h; sourceTree = "<group>"; };
 		8E410EB8187A034E00619DC7 /* CBSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSViewController.m; path = classes/controllers/CBSViewController.m; sourceTree = "<group>"; };
 		8E6267CA187A1C0E00ABC1A4 /* libPods-ScarfTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ScarfTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-ScarfTests-Kiwi.a"; sourceTree = "<group>"; };
+		8E6FF8711896190400C593AF /* CBSIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSIntroView.h; path = classes/views/CBSIntroView.h; sourceTree = "<group>"; };
+		8E6FF8721896190400C593AF /* CBSIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSIntroView.m; path = classes/views/CBSIntroView.m; sourceTree = "<group>"; };
+		8E6FF87518961B8300C593AF /* NSNumber+Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+Validator.h"; path = "classes/helpers/NSNumber+Validator.h"; sourceTree = "<group>"; };
+		8E6FF87618961B8300C593AF /* NSNumber+Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+Validator.m"; path = "classes/helpers/NSNumber+Validator.m"; sourceTree = "<group>"; };
 		8EAA901E187BBAAF007B1BBE /* CBSLocationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocationSpec.m; path = specs/model/CBSLocationSpec.m; sourceTree = "<group>"; };
 		8EAA9020187BBBBC007B1BBE /* CBSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBSLocation.h; path = classes/model/CBSLocation.h; sourceTree = "<group>"; };
 		8EAA9021187BBBBC007B1BBE /* CBSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBSLocation.m; path = classes/model/CBSLocation.m; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 		8E410EB1187A021A00619DC7 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8E6FF8711896190400C593AF /* CBSIntroView.h */,
+				8E6FF8721896190400C593AF /* CBSIntroView.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 		8E410EB3187A032600619DC7 /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				8E6FF87418961B5C00C593AF /* helpers */,
 				8E19423D1882F931008BBAF1 /* api */,
 				8E410EB2187A022600619DC7 /* controllers */,
 				8E2249D51894649C00958624 /* constants */,
@@ -302,6 +311,15 @@
 				8E194246188350EF008BBAF1 /* view model */,
 			);
 			name = classes;
+			sourceTree = "<group>";
+		};
+		8E6FF87418961B5C00C593AF /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8E6FF87518961B8300C593AF /* NSNumber+Validator.h */,
+				8E6FF87618961B8300C593AF /* NSNumber+Validator.m */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 		8EAA901C187BBA11007B1BBE /* model */ = {
@@ -546,6 +564,7 @@
 			files = (
 				8E410EB9187A034E00619DC7 /* CBSViewController.m in Sources */,
 				8EE408211894C0DD00BD7709 /* CBSRainOverlayView.m in Sources */,
+				8E6FF87718961B8300C593AF /* NSNumber+Validator.m in Sources */,
 				8EAA9022187BBBBC007B1BBE /* CBSLocation.m in Sources */,
 				8E2249D4189462A100958624 /* CBSIntroViewController.m in Sources */,
 				8E410E85187A017300619DC7 /* main.m in Sources */,
@@ -554,6 +573,7 @@
 				8EE4082A1894D12E00BD7709 /* CBSSnowOverlayView.m in Sources */,
 				8E1942401882F96D008BBAF1 /* CBSAPIClient.m in Sources */,
 				8E410EB6187A034100619DC7 /* CBSAppDelegate.m in Sources */,
+				8E6FF8731896190400C593AF /* CBSIntroView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

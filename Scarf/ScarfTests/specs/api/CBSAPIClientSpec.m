@@ -11,7 +11,8 @@
 @interface CBSAPIClientSpecHelperMethods : NSObject 
 
 + (void)setupStubRequestPassingTestWithStatusCode:(int)statusCode;
-+ (CLLocation *)aLocation;
++ (CLLocation *)aValidLocation;
++ (CLLocation *)anInvalidLocation;
 
 @end
 
@@ -29,9 +30,14 @@
     }];
 }
 
-+ (CLLocation *)aLocation
++ (CLLocation *)aValidLocation
 {
    return [[CLLocation alloc] initWithLatitude:45.384 longitude:45.384];
+}
+
++ (CLLocation *)anInvalidLocation
+{
+    return [[CLLocation alloc] initWithLatitude:588.384 longitude:495.384];
 }
 
 @end
@@ -68,7 +74,7 @@ describe(@"A CBSAPIClient ", ^{
         __block NSURLSessionDataTask *task;
         
         beforeEach(^{
-            task = [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:nil];
+            task = [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aValidLocation] completion:nil];
         });
         
         afterEach(^{
@@ -87,13 +93,10 @@ describe(@"A CBSAPIClient ", ^{
             [[[task.originalRequest.URL absoluteString] should] equal:@"http://localhost:4730/weather/?lat=45.384&lon=45.384"];
         });
         
-        pending_(@"should not accept an invalid latitude", ^{
-            
+        it(@"should return nil for an invalid latitude or longitude", ^{
+            task = [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods anInvalidLocation] completion:nil];
+            [[task should] beNil];
         });
-        
-       pending_(@"should not accept an invalid longitude", ^{
-    
-       });
         
         context(@"and data is returned", ^{
             
@@ -106,7 +109,7 @@ describe(@"A CBSAPIClient ", ^{
                 
                 [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:404];
                
-                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:^(NSDictionary *results, NSError *error) {
+                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aValidLocation] completion:^(NSDictionary *results, NSError *error) {
                     if (error) {
                         myError = error;
                     }
@@ -120,7 +123,7 @@ describe(@"A CBSAPIClient ", ^{
                 
                 [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:200];
                 
-                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:^(NSDictionary *results, NSError *error) {
+                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aValidLocation] completion:^(NSDictionary *results, NSError *error) {
                     if (error) {
                         myError = error;
                     }
@@ -135,7 +138,7 @@ describe(@"A CBSAPIClient ", ^{
                 
                 [CBSAPIClientSpecHelperMethods setupStubRequestPassingTestWithStatusCode:200];
                 
-                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aLocation] completion:^(NSDictionary *results, NSError *error) {
+                [client searchForWeatherAtLocation:[CBSAPIClientSpecHelperMethods aValidLocation] completion:^(NSDictionary *results, NSError *error) {
                     if (error) {
                         myError = error;
                     }
